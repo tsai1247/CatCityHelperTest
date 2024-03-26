@@ -258,7 +258,7 @@
             }
           ]
 
-        case eventClassification.clubBattle:
+          case eventClassification.clubBattle:
           return [
             ...sum,
             {
@@ -282,6 +282,39 @@
               },
               popover: {
                 label: `${event.name}`,
+                visibility: 'hover',
+              }
+            }
+          ]
+
+        case eventClassification.versionUpdate:
+          return [
+            ...sum,
+            {
+              key: index*2,
+              highlight: {
+                color: 'yellow',
+                fillMode: 'light',
+              },
+              dates: [
+                new Date(event.period.start),
+              ],
+              popover: {
+                label: `${event.name} 開始`,
+                visibility: 'hover',
+              }
+            },
+            {
+              key: index*2 + 1,
+              highlight: {
+                color: 'yellow',
+                fillMode: 'light',
+              },
+              dates: [
+                new Date(event.period.end),
+              ],
+              popover: {
+                label: `${event.name} 結束`,
                 visibility: 'hover',
               }
             }

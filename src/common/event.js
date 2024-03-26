@@ -31,16 +31,25 @@ const eventClassification = {
     ]
   },*/
   longTermEvent: 1, // "長期活動", // '版本活動','【合約】'
-  clubBattle: 2, // "社團特訓", // '社團特訓'
-  specialSummon: 3, // '活動召喚', // '活動召喚'
-  periodicityEvent: 4, // '短時間事件', // '定向作戰'
-  periodicityDiscount: 5, // '短時間優惠', // '全副武裝'
-  shortTermEvent: 6, // "短期活動", // '緊急封鎖', '噩夢迴響'
-  worldBoss: 7, // '世界首領' // '世界首領'
+  versionUpdate: 2, // 大版本更新
+  clubBattle: 3, // "社團特訓", // '社團特訓'
+  specialSummon: 4, // '活動召喚', // '活動召喚'
+  periodicityEvent: 5, // '短時間事件', // '定向作戰'
+  periodicityDiscount: 6, // '短時間優惠', // '全副武裝'
+  shortTermEvent: 7, // "短期活動", // '緊急封鎖', '噩夢迴響'
+  worldBoss: 8, // '世界首領' // '世界首領'
 }
 
 const eventList = {
   1.5: [
+    {
+      name: 'v1.5 秀色可餐',
+      type: eventClassification.versionUpdate,
+      period: {
+        start: '2024-02-28',
+        end: '2024-03-26',
+      },
+    },
     {
       name: '停機維護',
       type: eventClassification.ignore,
@@ -327,6 +336,16 @@ const eventList = {
       period: {
         start: '2024-03-20',
         end: INF,
+      },
+    },
+  ],
+  1.6: [
+    {
+      name: 'v1.6 竹野熊踪',
+      type: eventClassification.versionUpdate,
+      period: {
+        start: '2024-03-27',
+        end: '2024-04-23',
       },
     },
   ]
