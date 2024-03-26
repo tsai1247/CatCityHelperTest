@@ -38,6 +38,7 @@
                   class="ma-0 pa-0"
                   :attributes="attrs"
                 >
+
                 </v-calendar>
               </div>
             </v-col>
@@ -128,7 +129,10 @@
 
   onMounted(() => {
     attrs.value = Object.values(eventList).reduce((sum, cur) => [...sum, ...cur], []);
-    console.log('@', attrs.value);
+    attrs.value = attrs.value.sort((a, b) => {
+      return (b.type - a.type);
+    })
+
     ignoreList.value = [];
     attrs.value = attrs.value.reduce((sum, event, index) => {
       switch (event.type) {
@@ -139,7 +143,7 @@
           return [
             ...sum,
             {
-              key: index + 0.1,
+              key: index*2,
               highlight: {
                 color: 'red'
               },
@@ -150,7 +154,7 @@
               }
             },
             {
-              key: index + 0.2,
+              key: index*2+1,
               highlight: {
                 color: 'red',
                 fillMode: 'outline',
@@ -166,7 +170,7 @@
           return [
             ...sum,
             {
-              key: index,
+              key: index*2,
               dot: true,
               dates: [new Date(event.period.start)],
               popover: {
@@ -180,7 +184,7 @@
           return [
             ...sum,
             {
-              key: index + 0.1,
+              key: index*2,
               highlight: {
                 color: 'yellow'
               },
@@ -191,10 +195,8 @@
               }
             },
             {
-              key: index + 0.2,
-              highlight: {
-                color: 'gray',
-              },
+              key: index*2+1,
+              dot: 'gray',
               dates: [new Date(event.period.end)],
               popover: {
                 label: `${event.name} - 結束`,
@@ -204,26 +206,49 @@
           ]
 
           case eventClassification.periodicityEvent:
-          return [
-            ...sum,
-            {
-              key: index,
-              highlight: {
-                color: 'purple',
-              },
-              dates: [new Date(event.period.end)],
-              popover: {
-                label: `${event.name} - 結束`,
-                visibility: 'hover',
+            return [
+              ...sum,
+              {
+                key: index*2,
+                content: {
+                  color: 'purple',
+                  style: {
+                    fontStyle: 'italic',
+                  },
+                },
+                dates: {
+                  start: new Date(event.period.start),
+                  end: new Date(event.period.end),
+                },
+                popover: {
+                  label: `${event.name}`,
+                  visibility: 'hover',
+                }
               }
-            }
-          ]
+            ]
+
+          case eventClassification.periodicityDiscount:
+            return [
+              ...sum,
+              {
+                key: index*2,
+                bar: 'purple',
+                dates: {
+                  start: new Date(event.period.start),
+                  end: new Date(event.period.end),
+                },
+                popover: {
+                  label: `${event.name}`,
+                  visibility: 'hover',
+                }
+              }
+            ]
 
           case eventClassification.worldBoss:
           return [
             ...sum,
             {
-              key: index,
+              key: index*2,
               dot: 'orange',
               dates: [new Date(event.period.start)],
               popover: {
@@ -237,7 +262,7 @@
           return [
             ...sum,
             {
-              key: index,
+              key: index*2,
               highlight: {
                 start: {
                   color: 'blue',
@@ -256,7 +281,7 @@
                 end: new Date(event.period.end),
               },
               popover: {
-                label: `${event.name} - 開始`,
+                label: `${event.name}`,
                 visibility: 'hover',
               }
             }
@@ -286,7 +311,6 @@
       // }
     }, [])
 
-    console.log(attrs.value);
   })
 
 </script>

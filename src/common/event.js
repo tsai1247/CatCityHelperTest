@@ -16,7 +16,8 @@ const markStyle = {
 }
 
 const eventClassification = {
-  ignore: '忽略', /*{
+  ignore: 999, // 忽略
+  /*{
     content: [
       '戰鬥訓練',
       '培養挑戰',
@@ -29,12 +30,13 @@ const eventClassification = {
       '精品展櫃',
     ]
   },*/
-  longTermEvent: "長期活動", // '版本活動','【合約】'
-  shortTermEvent: "短期活動", // '緊急封鎖', '噩夢迴響'
-  clubBattle: "社團特訓", // '社團特訓'
-  periodicityEvent: '短時間事件', // '定向作戰', '全副武裝'
-  specialSummon: '活動召喚', // '活動召喚'
-  worldBoss: '世界首領' // '世界首領'
+  longTermEvent: 1, // "長期活動", // '版本活動','【合約】'
+  clubBattle: 2, // "社團特訓", // '社團特訓'
+  specialSummon: 3, // '活動召喚', // '活動召喚'
+  periodicityEvent: 4, // '短時間事件', // '定向作戰'
+  periodicityDiscount: 5, // '短時間優惠', // '全副武裝'
+  shortTermEvent: 6, // "短期活動", // '緊急封鎖', '噩夢迴響'
+  worldBoss: 7, // '世界首領' // '世界首領'
 }
 
 const eventList = {
@@ -160,7 +162,7 @@ const eventList = {
       },
     },
     {
-      name: '社團特訓第六期',
+      name: '社團特訓 - 第六期',
       type: eventClassification.clubBattle,
       period: {
         start: '2024-03-06',
@@ -176,8 +178,8 @@ const eventList = {
       },
     },
     {
-      name: '新一期【合約】法夕黛-指尖芳菲開啟',
-      type: eventClassification.periodicityEvent,
+      name: '【合約】法夕黛-指尖芳菲開啟',
+      type: eventClassification.longTermEvent,
       period: {
         start: '2024-03-10',
         end: '2024-04-09',
@@ -257,7 +259,7 @@ const eventList = {
     },
     {
       name: '全副武裝',
-      type: eventClassification.periodicityEvent,
+      type: eventClassification.periodicityDiscount,
       period: {
         start: '2024-03-13',
         end: '2024-03-19',
@@ -296,7 +298,7 @@ const eventList = {
       },
     },
     {
-      name: '社團特訓第七期',
+      name: '社團特訓 - 第七期',
       type: eventClassification.clubBattle,
       period: {
         start: '2024-03-20',
