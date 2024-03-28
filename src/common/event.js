@@ -23,6 +23,7 @@ const eventClassification = {
       '培養挑戰',
       '福利扭蛋機',
       '限時簽到',
+      '百日回饋',
       '一般召喚',
       '餐廳新海幣收益up',
       '商城內容更新',
@@ -67,7 +68,7 @@ const eventList = {
       },
     },
     {
-      name: '活動召喚-清平樂',
+      name: '活動召喚「清平樂」',
       type: eventClassification.specialSummon,
       period: {
         start: '2024-02-28',
@@ -75,7 +76,7 @@ const eventList = {
       },
     },
     {
-      name: '活動召喚-醉紅塵',
+      name: '活動召喚「醉紅塵」',
       type: eventClassification.specialSummon,
       period: {
         start: '2024-02-28',
@@ -83,7 +84,7 @@ const eventList = {
       },
     },
     {
-      name: '戰鬥訓練-清平樂',
+      name: '戰鬥訓練 - 米飯 清平樂',
       type: eventClassification.ignore,
       period: {
         start: '2024-02-28',
@@ -91,7 +92,7 @@ const eventList = {
       },
     },
     {
-      name: '戰鬥訓練-醉紅塵',
+      name: '戰鬥訓練 - 紅茶 醉紅塵',
       type: eventClassification.ignore,
       period: {
         start: '2024-02-28',
@@ -99,7 +100,7 @@ const eventList = {
       },
     },
     {
-      name: '培養挑戰-清平樂',
+      name: '培養挑戰 - 米飯 清平樂',
       type: eventClassification.ignore,
       period: {
         start: '2024-02-28',
@@ -107,7 +108,7 @@ const eventList = {
       },
     },
     {
-      name: '培養挑戰-醉紅塵',
+      name: '培養挑戰 - 紅茶 醉紅塵',
       type: eventClassification.ignore,
       period: {
         start: '2024-02-28',
@@ -123,7 +124,7 @@ const eventList = {
       },
     },
     {
-      name: '噩夢迴響 - 第五期',
+      name: '「噩夢迴響」第五期',
       type: eventClassification.shortTermEvent,
       period: {
         start: '2024-02-28',
@@ -187,7 +188,7 @@ const eventList = {
       },
     },
     {
-      name: '【合約】法夕黛-指尖芳菲開啟',
+      name: '【合約】法夕黛-指尖芳菲',
       type: eventClassification.longTermEvent,
       period: {
         start: '2024-03-10',
@@ -211,7 +212,7 @@ const eventList = {
       },
     },
     {
-      name: '活動召喚-離夢蝶',
+      name: '活動召喚「離夢蝶」',
       type: eventClassification.specialSummon,
       period: {
         start: '2024-03-13',
@@ -219,7 +220,7 @@ const eventList = {
       },
     },
     {
-      name: '戰鬥訓練-離夢蝶',
+      name: '戰鬥訓練 - 祈 離夢蝶',
       type: eventClassification.ignore,
       period: {
         start: '2024-03-13',
@@ -227,7 +228,7 @@ const eventList = {
       },
     },
     {
-      name: '戰鬥訓練-指尖芳菲',
+      name: '戰鬥訓練 - 法夕黛 指尖芳菲',
       type: eventClassification.ignore,
       period: {
         start: '2024-03-13',
@@ -235,7 +236,7 @@ const eventList = {
       },
     },
     {
-      name: '培養挑戰-離夢蝶',
+      name: '培養挑戰 - 祈 離夢蝶',
       type: eventClassification.ignore,
       period: {
         start: '2024-03-13',
@@ -259,7 +260,7 @@ const eventList = {
       },
     },
     {
-      name: '噩夢迴響 - 第六期',
+      name: '「噩夢迴響」第六期',
       type: eventClassification.shortTermEvent,
       period: {
         start: '2024-03-13',
@@ -348,7 +349,103 @@ const eventList = {
         end: '2024-04-23',
       },
     },
-  ]
+    {
+      name: '停機維護',
+      type: eventClassification.ignore,
+      period: {
+        start: '2024-03-27',
+        end: '2024-03-27',
+      },
+    },
+    {
+      name: '竹野熊蹤',
+      type: eventClassification.longTermEvent,
+      period: {
+        start: '2024-03-27',
+        end: '2024-04-16',
+      },
+    },
+    {
+      name: '活動召喚「幽篁月韻」',
+      type: eventClassification.specialSummon,
+      period: {
+        start: '2024-03-27',
+        end: '2024-04-09',
+      },
+    },
+    {
+      name: '活動召喚「滌蕩者」復刻',
+      type: eventClassification.specialSummon,
+      period: {
+        start: '2024-03-27',
+        end: '2024-04-09',
+      },
+    },
+    {
+      name: '戰鬥訓練 - 特莉絲 幽篁月韻',
+      type: eventClassification.ignore,
+      period: {
+        start: '2024-03-27',
+        end: '2024-04-09',
+      },
+    },
+    {
+      name: '戰鬥訓練 - 小白 滌蕩者',
+      type: eventClassification.ignore,
+      period: {
+        start: '2024-03-27',
+        end: '2024-04-09',
+      },
+    },
+    {
+      name: '培養挑戰 - 特莉絲 幽篁月韻',
+      type: eventClassification.ignore,
+      period: {
+        start: '2024-03-27',
+        end: '2024-04-09',
+      },
+    },
+    {
+      name: '百日回饋',
+      type: eventClassification.ignore,
+      period: {
+        start: '2024-03-27',
+        end: '2024-04-09',
+      },
+    },
+    {
+      name: '限時簽到',
+      type: eventClassification.ignore,
+      period: {
+        start: '2024-03-27',
+        end: '2024-04-16',
+      },
+    },
+    {
+      name: '「噩夢迴響」第七期',
+      type: eventClassification.shortTermEvent,
+      period: {
+        start: '2024-03-27',
+        end: '2024-04-09',
+      },
+    },
+    {
+      name: '定向作戰',
+      type: eventClassification.periodicityEvent,
+      period: {
+        start: '2024-03-31',
+        end: '2024-04-02',
+      },
+    },
+    {
+      name: '商城更新',
+      type: eventClassification.ignore,
+      period: {
+        start: '2024-03-27',
+        end: '2024-04-09',
+      },
+    },
+  ],
 }
 
 
